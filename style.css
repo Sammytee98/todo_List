@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    background-color: #E9EFEC;
+}
+
+#container {
+    width: 600px;
+    background-color: #6A9C89;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    border: none;
+    border-radius: 10px;
+}
+#container .heading {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #16423C;
+    border-radius: 10px;
+}
+#container .heading .title {
+    display: flex;
+    gap: 20px;
+}
+
+#container .heading h1 {
+    font-size: 1.8em;
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;
+    color: #E9EFEC;
+}
+#container .heading img {
+    width: 40px;
+    height: 80px;
+}
+#container #taskCounter {
+    font-size: 2.5em;
+    font-weight: 800;
+    color: #FFFFFF;
+    padding: 15px;
+    background-color: #6A9C89;
+    border-radius: 50%;
+}
+
+#container .inputContainer {
+    width: 100%;
+    height: auto;
+    margin-block: 10px;
+    display: inline-flex;
+    justify-content: center;
+}
+#container .inputContainer #inputField {
+    width: 70%;
+    padding: 12px;
+    border: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    outline: none;
+    background-color: transparent;
+    box-shadow: 0 0 5px #16423C;
+    color: #000000;
+    caret-color: #FFFFFF;
+}
+#inputField::placeholder {
+    color: #E9EFEC;
+}
+#container .inputContainer button {
+    width: 20%;
+    border: none;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #16423C;
+    color: #ffffff;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#container .inputContainer button:hover {
+    background-color: #26423C;
+}
+#container #taskList {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 10px;
+}
+#container #taskList li {
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+    padding: 12px 35px;
+    box-sizing: border-box;
+    background-color: #16423C;
+    color: #FFFFFF;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 0.8em;
+    cursor: pointer;
+    border-radius: 50px;
+    position: relative;
+}
+#container #taskList li::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    margin-right: 10px;
+}
+#container #taskList li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+#container #taskList li.checked::before {
+    background-image: url(images/checked.png);
+    width: 20px;
+    height: 20px;
+}
+#container #taskList li span {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s;
+    cursor: pointer;
+    background-image: url(images/delete.png);
+    background-size: cover;
+    background-position: center;
+}
+#container #taskList li span:hover {
+    background-image: url(images/delete_hover_state.png);
+}
+
+#container #taskList li .renameIcon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s;
+    cursor: pointer;
+    background-image: url(images/rename.png);
+    background-size: cover;
+    background-position: center;
+}
+#container #taskList li .renameIcon:hover {
+    opacity: 0.5;
+}
+
+@media (max-width:780px) {
+    #container {
+        width: 100%;
+    }
+}
